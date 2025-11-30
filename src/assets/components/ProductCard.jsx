@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
-import{CartContext} from"./CartContext";
 import{Link}from"react-router-dom";
+import { CartContext } from "./CartContext";
 function ProductCard({product}){
     const{cart, setCart}=useContext(CartContext);
     const addToCart=()=>{
@@ -23,8 +23,8 @@ return(
 <img src={product.image}/>
  </Link>
 <div className="bg-gray-50 p-4">
-    <h2 className="mt-2 font-bold"><link>{product.title}</link></h2>
-    <p className="text-gray-700">${product.description}</p>
+    <h2 className="mt-2 font-bold">{product.price}</h2>
+    <p className="text-gray-700">${product.Name}</p>
     <button onClick={addToCart} className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
         Add To Cart
     </button>

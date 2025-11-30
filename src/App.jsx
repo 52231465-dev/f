@@ -6,8 +6,13 @@ import Navbar from "./assets/components/Navbar";
 import Footer from "./assets/components/Footer";
 import ProductCard from "./assets/components/ProductCard";
 import ProductGrid from "./assets/components/ProductGrid";
+import { CartContext, CartProvider } from "./assets/components/CartContext";
+
 function App() {
-  return (<BrowserRouter>
+  return (
+    <CartProvider>
+  <BrowserRouter>
+
   <Navbar/>
   <Footer/>
   <ProductCard/>
@@ -18,12 +23,11 @@ function App() {
     <Route path="/product" element={<Productdetails/>}/>
     <Route path="/Navbar" element={<Navbar/>}/>
      <Route path="/Footer" element={<Footer/>}/>
-      <Route path="/ProductGrid" element={<ProductGrid/>}/>
-       <Route path="/ProductCard" element={<ProductCard/>}/>
       
     <Route path="/cart" element={<CartPage/>}/>
   </Routes>
   </BrowserRouter>
+  </CartProvider>
   )
 }
 
